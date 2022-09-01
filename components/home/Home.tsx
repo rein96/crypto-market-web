@@ -60,13 +60,13 @@ const Home = () => {
                       <div className='flex items-center'>
                         <div className='flex-shrink-0 h-10 w-10'></div>
                         <div className='ml-3'>
-                          <p className='text-custom-grey whitespace-no-wrap'>
+                          <div className='text-custom-grey whitespace-no-wrap'>
                             <SvgInline
                               url={currency.logo}
                               color={currency.color}
                               size={32}
                             />
-                          </p>
+                          </div>
                         </div>
                       </div>
                     </td>
