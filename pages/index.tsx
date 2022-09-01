@@ -4,7 +4,7 @@ import Head from 'next/head';
 
 const HomePage: NextPage = () => {
   return (
-    <div className='px-10'>
+    <div className='dark:bg-white'>
       <Head>
         <title>Crypto Market</title>
         <meta name='description' content='Crypto Market' />

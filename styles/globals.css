@@ -19,7 +19,7 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
@@ -27,9 +27,27 @@ a {
     color: white;
     background: black;
   }
-}
+} */
 
 svg {
   width: inherit;
   height: inherit;
+}
+
+#desktop-home-content {
+  display: none;
+}
+
+#mobile-home-content {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  #desktop-home-content {
+    display: block;
+  }
+
+  #mobile-home-content {
+    display: none;
+  }
 }
