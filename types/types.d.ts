@@ -35,3 +35,8 @@ export interface ResponseInterface<T> {
   message: string;
   payload: T;
 }
+
+export interface TableHeaderInterface {
+  id: string;
+  content: string;
+}
