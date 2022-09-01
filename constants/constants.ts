@@ -1,22 +1,6 @@
 import { TableHeaderInterface } from 'types';
 
-export const tableHeaderContent: TableHeaderInterface[] = [
-  {
-    id: 'logo',
-    content: '',
-  },
-  {
-    id: 'name',
-    content: 'CRYPTO',
-  },
-  {
-    id: 'currencySymbol',
-    content: '',
-  },
-  {
-    id: 'latestPrice',
-    content: 'HARGA',
-  },
+const priceHeaderContent: TableHeaderInterface[] = [
   {
     id: 'day',
     content: '24 JAM',
@@ -34,3 +18,25 @@ export const tableHeaderContent: TableHeaderInterface[] = [
     content: '1 THN',
   },
 ];
+
+const tableHeaderContent: TableHeaderInterface[] = [
+  {
+    id: 'logo',
+    content: '',
+  },
+  {
+    id: 'name',
+    content: 'CRYPTO',
+  },
+  {
+    id: 'currencySymbol',
+    content: '',
+  },
+  {
+    id: 'latestPrice',
+    content: 'HARGA',
+  },
+  ...priceHeaderContent,
+];
+
+export { tableHeaderContent, priceHeaderContent };
