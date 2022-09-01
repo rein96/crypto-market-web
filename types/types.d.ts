@@ -1,10 +1,10 @@
 export interface PriceDataInterface {
   pair: string;
   latestPrice: string;
-  day: string;
-  week: string;
-  month: string;
-  year: string;
+  day: null | string;
+  week: null | string;
+  month: null | string;
+  year: null | string;
 }
 
 export interface CryptocurrencyInterface {
@@ -16,6 +16,10 @@ export interface CryptocurrencyInterface {
   decimal_point: number;
   listingDate: Date;
   wallets: WalletInterface[];
+}
+
+export interface SortedPricePairInterface {
+  [key: string]: PriceDataInterface;
 }
 
 interface WalletInterface {
