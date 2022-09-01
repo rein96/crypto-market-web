@@ -4,6 +4,7 @@ import { tableHeaderContent } from 'constants/constants';
 import { useCurrencyList, usePriceChanges, useRenderPercentage } from 'hooks';
 import { PriceDataInterface } from 'types';
 import MobileHomeContent from './MobileHomeContent';
+import { rupiahFormatter } from 'utils';
 
 const Home = () => {
   const { data: priceChangesResponseData } = usePriceChanges();
@@ -81,7 +82,7 @@ const Home = () => {
                     {/* Harga */}
                     <td className='py-4 px-6 border-b border-gray-20 text-sm '>
                       <p className='text-custom-black'>
-                        Rp {priceDetail?.latestPrice}
+                        {rupiahFormatter(Number(priceDetail.latestPrice))}
                       </p>
                     </td>
                     {/* 24 JAM */}
