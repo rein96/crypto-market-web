@@ -2,7 +2,8 @@ import { SvgInline } from 'components/SvgInline';
 import React, { useMemo } from 'react';
 import { tableHeaderContent } from 'constants/constants';
 import { useCurrencyList, usePriceChanges } from 'hooks';
-import { PriceDataInterface } from 'types';
+import { PriceDataInterface, SortedPricePairInterface } from 'types';
+import classnames from 'classnames';
 
 const Home = () => {
   const { data: priceChangesResponseData } = usePriceChanges();
@@ -12,7 +13,7 @@ const Home = () => {
 
   const currencyList = currencyListResponseData?.payload;
 
-  const sortedPricePairData = useMemo(() => {
+  const sortedPricePairData: SortedPricePairInterface = useMemo(() => {
     const temporaryObject = {};
     pricePairList?.forEach(function (priceData) {
       /** Ex: from 'btc/idr' to 'btc' */
@@ -23,17 +24,42 @@ const Home = () => {
     return temporaryObject;
   }, [pricePairList]);
 
+  /** Return price with color */
+  const renderTextPrice = (price: string): React.ReactNode => {
+    if (!price) return <p></p>;
+
+    const isNegative = price[0] === '-';
+
+    const isZero = price === '0.00';
+
+    if (isNegative) {
+      return <p className='text-loss'>{price}</p>;
+    }
+
+    return (
+      <p
+        className={classnames({
+          'text-loss': isNegative,
+          'text-custom-black': isZero,
+          'text-profit': !isNegative && !isZero,
+        })}
+      >
+        {price}
+      </p>
+    );
+  };
+
   return (
     <div className='container m-auto p-4 dark:bg-white'>
       <table className='w-full leading-normal '>
-        <thead className='text-gray-600 text-xs font-semibold border-gray tracking-wider text-left px-5 py-3 bg-gray-100 hover:cursor-pointer uppercase border-b-2 border-gray-200'>
-          <tr className='border-b border-gray'>
+        <thead className='text-gray-600 text-xs font-semibold border-gray tracking-wider text-left px-5 py-3 hover:cursor-pointer uppercase border-b-2 border-gray-200'>
+          <tr className='border-b border-gray rounded-md'>
             {tableHeaderContent.map((text) => {
               return (
                 <th
                   key={text.id}
                   scope='col'
-                  className='text-gray-dark border-gray border-b-2 border-t-2 border-gray-200 py-3 px-3 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider'
+                  className='text-gray-dark border-gray border-b-2 border-t-2 border-gray-200 py-3 px-3 text-left text-xs font-semibold text-custom-grey uppercase tracking-wider'
                 >
                   {text.content}
                 </th>
@@ -56,11 +82,11 @@ const Home = () => {
                 key={currency.currencySymbol}
                 className='hover:bg-gray-100 hover:cursor-pointer'
               >
-                <td className='py-4 px-6 border-b border-gray-200 text-gray-900 text-sm '>
+                <td className='py-4 px-6 border-b border-gray-200 text-custom-grey text-sm '>
                   <div className='flex items-center'>
                     <div className='flex-shrink-0 h-10 w-10'></div>
                     <div className='ml-3'>
-                      <p className='text-gray-900 whitespace-no-wrap'>
+                      <p className='text-custom-grey whitespace-no-wrap'>
                         <SvgInline
                           url={currency.logo}
                           color={currency.color}
@@ -70,32 +96,36 @@ const Home = () => {
                     </div>
                   </div>
                 </td>
-                <td className='py-4 px-6 border-b border-gray-200 text-gray-900 text-sm '>
-                  <span>{currency.name}</span>
+                {/* Name */}
+                <td className='py-4 px-6 border-b border-gray-200 text-custom-black text-sm '>
+                  <p>{currency.name}</p>
                 </td>
-                <td className='py-4 px-6 border-b border-gray-200 text-gray-900 text-sm '>
-                  <span>{currency.currencySymbol}</span>
+                {/* Symbol */}
+                <td className='py-4 px-6 border-b border-gray-200 text-custom-grey text-sm '>
+                  <p>{currency.currencySymbol}</p>
                 </td>
                 {/* Price column */}
                 {/* Harga */}
-                <td className='py-4 px-6 border-b border-gray-200 text-gray-900 text-sm '>
-                  <span>{priceDetail?.latestPrice}</span>
+                <td className='py-4 px-6 border-b border-gray-20 text-sm '>
+                  <p className='text-custom-black'>
+                    {priceDetail?.latestPrice}
+                  </p>
                 </td>
                 {/* 24 JAM */}
-                <td className='py-4 px-6 border-b border-gray-200 text-gray-900 text-sm '>
-                  <span>{priceDetail?.day}</span>
+                <td className='py-4 px-6 border-b border-gray-20 text-sm '>
+                  {renderTextPrice(priceDetail?.day)}
                 </td>
                 {/* 1 MGG */}
-                <td className='py-4 px-6 border-b border-gray-200 text-gray-900 text-sm '>
-                  <span>{priceDetail?.week}</span>
+                <td className='py-4 px-6 border-b border-gray-20 text-sm '>
+                  {renderTextPrice(priceDetail?.week)}
                 </td>
                 {/* 1 BLN */}
-                <td className='py-4 px-6 border-b border-gray-200 text-gray-900 text-sm '>
-                  <span>{priceDetail?.month}</span>
+                <td className='py-4 px-6 border-b border-gray-20 text-sm '>
+                  {renderTextPrice(priceDetail?.month)}
                 </td>
                 {/* 1 THN */}
-                <td className='py-4 px-6 border-b border-gray-200 text-gray-900 text-sm '>
-                  <span>{priceDetail?.year}</span>
+                <td className='py-4 px-6 border-b border-gray-20 text-sm '>
+                  {renderTextPrice(priceDetail?.year)}
                 </td>
               </tr>
             );
