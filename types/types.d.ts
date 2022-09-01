@@ -1,4 +1,4 @@
-export interface PriceData {
+export interface PriceDataInterface {
   pair: string;
   latestPrice: string;
   day: string;

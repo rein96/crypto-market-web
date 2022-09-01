@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import endpoints from 'networks/endpoints';
-import { ResponseInterface, CryptocurrencyInterface } from 'types/types';
+import { ResponseInterface, CryptocurrencyInterface } from 'types';
 
 const fetchWalletSupportedCurrencies = async () => {
   const URL = endpoints.walletSupportedCurrencies;

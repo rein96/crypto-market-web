@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import endpoints from 'networks/endpoints';
-import { ResponseInterface, PriceData } from 'types/types';
+import { ResponseInterface, PriceDataInterface } from 'types';
 
 const fetchPriceChanges = async () => {
   const URL = endpoints.tradePriceChanges;
@@ -13,7 +13,7 @@ const fetchPriceChanges = async () => {
 
 /** Get list of price changes from trade/price-changes */
 const usePriceChanges = () => {
-  return useQuery<ResponseInterface<PriceData[]>>(
+  return useQuery<ResponseInterface<PriceDataInterface[]>>(
     [endpoints.tradePriceChanges],
     () => fetchPriceChanges()
   );
