@@ -10,20 +10,9 @@ const Home = () => {
   const { data: priceChangesResponseData } = usePriceChanges();
   const { data: currencyListResponseData } = useCurrencyList();
 
-  const pricePairList = priceChangesResponseData?.payload;
-
   const currencyList = currencyListResponseData?.payload;
 
-  const sortedPricePairData: SortedPricePairInterface = useMemo(() => {
-    const temporaryObject = {};
-    pricePairList?.forEach(function (priceData) {
-      /** Ex: from 'btc/idr' to 'btc' */
-      const symbol = priceData.pair.split('/')?.[0];
-      return (temporaryObject[symbol] = priceData);
-    });
-
-    return temporaryObject;
-  }, [pricePairList]);
+  const sortedPricePairData = priceChangesResponseData?.sortedPricePairData;
 
   /** Return price with color */
   const renderTextPrice = (price: string): React.ReactNode => {
