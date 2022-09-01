@@ -54,3 +54,7 @@ export interface TableHeaderInterface {
   id: string;
   content: string;
 }
+
+export interface ArrowInterface {
+  color?: string;
+}
