@@ -21,16 +21,8 @@ const priceHeaderContent: TableHeaderInterface[] = [
 
 const tableHeaderContent: TableHeaderInterface[] = [
   {
-    id: 'logo',
-    content: '',
-  },
-  {
     id: 'name',
     content: 'CRYPTO',
-  },
-  {
-    id: 'currencySymbol',
-    content: '',
   },
   {
     id: 'latestPrice',

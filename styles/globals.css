@@ -66,3 +66,7 @@ svg {
 .text-loss {
   color: #ff5a5a !important;
 }
+
+.first-td {
+  padding: 1.25rem 1.25rem 1.25rem 75px;
+}
