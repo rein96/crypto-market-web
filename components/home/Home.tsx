@@ -1,7 +1,6 @@
 import React from 'react';
-
-import MobileCryptoMarket from './MobileCryptoMarket';
-import DesktopCryptoMarket from './DesktopCryptoMarket';
+import DesktopCryptoMarket from 'components/DesktopCryptoMarket';
+import MobileCryptoMarket from 'components/MobileCryptoMarket';
 
 const Home = () => {
   return (
