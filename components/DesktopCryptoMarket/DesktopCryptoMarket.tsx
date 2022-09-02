@@ -88,25 +88,25 @@ const DesktopCryptoMarket = () => {
                   </td>
                   {/* Price column */}
                   {/* Harga */}
-                  <td className='lg:py-4 lg:px-6 py-2 px-4 border-b border-gray-20 text-sm font-semibold'>
+                  <td className='lg:px-6 py-2 px-4 border-b border-gray-20 text-sm font-semibold'>
                     <p className='text-custom-black'>
                       {rupiahFormatter(Number(priceDetail.latestPrice))}
                     </p>
                   </td>
                   {/* 24 JAM */}
-                  <td className='lg:py-4 lg:px-6 py-2 px-4 border-b border-gray-20 text-sm font-semibold'>
+                  <td className='lg:px-6 py-2 px-4 border-b border-gray-20 text-sm font-semibold'>
                     {renderPercentage(priceDetail?.day)}
                   </td>
                   {/* 1 MGG */}
-                  <td className='lg:py-4 lg:px-6 py-2 px-4 border-b border-gray-20 text-sm font-semibold'>
+                  <td className='lg:px-6 py-2 px-4 border-b border-gray-20 text-sm font-semibold'>
                     {renderPercentage(priceDetail?.week)}
                   </td>
                   {/* 1 BLN */}
-                  <td className='lg:py-4 lg:px-6 py-2 px-4 border-b border-gray-20 text-sm font-semibold'>
+                  <td className='lg:px-6 py-2 px-4 border-b border-gray-20 text-sm font-semibold'>
                     {renderPercentage(priceDetail?.month)}
                   </td>
                   {/* 1 THN */}
-                  <td className='lg:py-4 lg:px-6 py-2 px-4 border-b border-gray-20 text-sm font-semibold border-r'>
+                  <td className='lg:px-6 py-2 px-4 border-b border-gray-20 text-sm font-semibold border-r'>
                     {renderPercentage(priceDetail?.year)}
                   </td>
                 </tr>
