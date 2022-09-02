@@ -31,4 +31,13 @@ const tableHeaderContent: TableHeaderInterface[] = [
   ...priceHeaderContent,
 ];
 
-export { tableHeaderContent, priceHeaderContent };
+const UPDATE_PRICE_INTERVAL = 5_000; // 5 second
+
+const UPDATE_CURRENCY_INTERVAL = 20_000; // 20 second
+
+export {
+  tableHeaderContent,
+  priceHeaderContent,
+  UPDATE_CURRENCY_INTERVAL,
+  UPDATE_PRICE_INTERVAL,
+};

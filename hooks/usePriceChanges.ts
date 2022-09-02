@@ -1,4 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
+import { UPDATE_PRICE_INTERVAL } from 'constants/constants';
 import endpoints from 'networks/endpoints';
 import { PriceChangesResponseInterface } from 'types';
 
@@ -30,7 +31,11 @@ const fetchPriceChanges = async () => {
 const usePriceChanges = () => {
   return useQuery<PriceChangesResponseInterface>(
     [endpoints.tradePriceChanges],
-    () => fetchPriceChanges()
+    () => fetchPriceChanges(),
+    {
+      staleTime: UPDATE_PRICE_INTERVAL, // ms
+      refetchInterval: UPDATE_PRICE_INTERVAL,
+    }
   );
 };
 

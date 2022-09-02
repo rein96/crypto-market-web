@@ -1,4 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
+import { UPDATE_CURRENCY_INTERVAL } from 'constants/constants';
 import endpoints from 'networks/endpoints';
 import { ResponseInterface, CryptocurrencyInterface } from 'types';
 
@@ -15,7 +16,10 @@ const fetchWalletSupportedCurrencies = async () => {
 const useCurrencyList = () => {
   return useQuery<ResponseInterface<CryptocurrencyInterface[]>>(
     [endpoints.walletSupportedCurrencies],
-    () => fetchWalletSupportedCurrencies()
+    () => fetchWalletSupportedCurrencies(),
+    {
+      staleTime: UPDATE_CURRENCY_INTERVAL,
+    }
   );
 };
 
