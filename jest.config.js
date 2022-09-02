@@ -1,5 +1,14 @@
 /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 module.exports = {
   preset: 'ts-jest',
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
+  globals: {
+    'ts-jest': {
+      tsconfig: 'tsconfig.jest.json',
+    },
+  },
+  setupFilesAfterEnv: ['./jest.setup.ts'],
+  moduleNameMapper: {
+    common: '<rootDir>/components/common',
+  },
 };
