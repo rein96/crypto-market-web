@@ -3,7 +3,7 @@ import { SvgInline } from 'components/SvgInline';
 import { useCurrencyList, usePriceChanges, useRenderPercentage } from 'hooks';
 import { PriceDataInterface } from 'types';
 import { rupiahFormatter } from 'utils';
-import { priceHeaderContent } from 'constants/constants';
+import { priceHeaderContent, PROXY_URL } from 'constants/constants';
 
 /** Render mobile content */
 const MobileHomeContent: React.FC = () => {
@@ -78,7 +78,7 @@ const MobileHomeContent: React.FC = () => {
                   className='mobile-body-list p-4 flex items-center border-t'
                 >
                   <SvgInline
-                    url={currency.logo}
+                    url={`${PROXY_URL}${currency.logo}`}
                     color={currency.color}
                     size={32}
                   />

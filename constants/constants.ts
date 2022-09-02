@@ -35,9 +35,13 @@ const UPDATE_PRICE_INTERVAL = 5_000; // 5 second
 
 const UPDATE_CURRENCY_INTERVAL = 20_000; // 20 second
 
+/** To eliminate CORS issue */
+const PROXY_URL = 'https://thingproxy.freeboard.io/fetch/';
+
 export {
   tableHeaderContent,
   priceHeaderContent,
   UPDATE_CURRENCY_INTERVAL,
   UPDATE_PRICE_INTERVAL,
+  PROXY_URL,
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { tableHeaderContent } from 'constants/constants';
+import { PROXY_URL, tableHeaderContent } from 'constants/constants';
 import { useCurrencyList, usePriceChanges, useRenderPercentage } from 'hooks';
 import { SvgInline } from 'components/SvgInline';
 import { PriceDataInterface } from 'types';
@@ -65,7 +65,7 @@ const DesktopCryptoMarket = () => {
                     <div className='text-custom-grey whitespace-no-wrap p-5'>
                       <div className='flex'>
                         <SvgInline
-                          url={currency.logo}
+                          url={`${PROXY_URL}${currency.logo}`}
                           color={currency.color}
                           size={32}
                         />

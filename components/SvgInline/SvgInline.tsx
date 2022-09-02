@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import React, { useEffect, useRef, useState } from 'react';
+import SVG from 'react-inlinesvg';
+import React, { useState } from 'react';
 
 interface SvgInlineProps {
   url: string;
@@ -13,36 +14,23 @@ interface SvgInlineProps {
  * If error (CORS), it will return Image component from next
  */
 const SvgInline: React.FC<SvgInlineProps> = ({ url, color, size = 32 }) => {
-  const ref = useRef(null);
-  const [svg, setSvg] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isErrored, setIsErrored] = useState(false);
+  const [isError, setIsError] = useState(false);
 
-  useEffect(() => {
-    fetch(url, {
-      headers: {
-        'Content-type': 'application/json',
-      },
-    })
-      .then((res) => res.text())
-      .then(setSvg)
-      .catch(setIsErrored)
-      .then(() => setIsLoaded(true));
-  }, [url]);
+  /** One of the errors could be CORS error */
+  const handleError = () => {
+    setIsError(true);
+  };
 
   return (
     <>
-      {isErrored && (
+      {isError && (
         <Image width={size} height={size} src={url} alt={'currency'} />
       )}
-      {!isErrored && isLoaded && (
-        <div
-          ref={ref}
-          style={{ color: color, width: size, height: size }}
-          className={`svgInline svgInline--${isLoaded ? 'loaded' : 'loading'} ${
-            isErrored ? 'svgInline--errored' : ''
-          }`}
-          dangerouslySetInnerHTML={{ __html: svg }}
+      {!isError && (
+        <SVG
+          src={url}
+          style={{ color, width: size, height: size }}
+          onError={handleError}
         />
       )}
     </>
