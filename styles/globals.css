@@ -36,6 +36,10 @@ svg {
 
 #desktop-home-content {
   display: none;
+
+  max-width: 1280px;
+  margin: auto;
+  padding-top: 2rem;
 }
 
 #mobile-home-content {
@@ -45,6 +49,7 @@ svg {
 @media (min-width: 768px) {
   #desktop-home-content {
     display: block;
+    padding: 1rem 1rem 2.5rem;
   }
 
   #mobile-home-content {

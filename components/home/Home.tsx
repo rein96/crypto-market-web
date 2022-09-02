@@ -5,6 +5,7 @@ import { useCurrencyList, usePriceChanges, useRenderPercentage } from 'hooks';
 import { PriceDataInterface } from 'types';
 import MobileHomeContent from './MobileHomeContent';
 import { rupiahFormatter } from 'utils';
+import classNames from 'classnames';
 
 const Home = () => {
   const { data: priceChangesResponseData } = usePriceChanges();
@@ -15,6 +16,8 @@ const Home = () => {
 
   const sortedPricePairData = priceChangesResponseData?.sortedPricePairData;
 
+  const lastIndexOfTableHeaderContent: number = tableHeaderContent.length - 1;
+
   return (
     <>
       <MobileHomeContent />
@@ -22,15 +25,21 @@ const Home = () => {
         id='desktop-home-content'
         className='container m-auto p-4 dark:bg-white px-10'
       >
-        <table className='w-full leading-normal '>
+        <table className='w-full leading-normal table-auto'>
           <thead className='text-gray-600 text-xs font-semibold border-gray tracking-wider text-left px-5 py-3 hover:cursor-pointer uppercase border-b-2 border-gray-200'>
             <tr className='border-b border-gray rounded-md'>
-              {tableHeaderContent.map((text) => {
+              {tableHeaderContent.map((text, index) => {
                 return (
                   <th
                     key={text.id}
                     scope='col'
-                    className='text-gray-dark border-gray border-b-2 border-t-2 border-gray-200 py-3 px-3 text-left text-xs font-semibold text-custom-grey uppercase tracking-wider'
+                    className={classNames(
+                      'text-gray-dark border-gray border-t-2 border-gray-200 py-3 px-3 text-left text-xs font-semibold text-custom-grey uppercase tracking-wider rounded-t-lg',
+                      {
+                        'border-l': index === 0,
+                        'border-r': index === lastIndexOfTableHeaderContent,
+                      }
+                    )}
                   >
                     {text.content}
                   </th>
@@ -56,18 +65,13 @@ const Home = () => {
                     key={currency.currencySymbol}
                     className='hover:bg-gray-100 hover:cursor-pointer'
                   >
-                    <td className='py-4 px-6 border-b border-gray-200 text-custom-grey text-sm '>
-                      <div className='flex items-center'>
-                        <div className='flex-shrink-0 h-10 w-10'></div>
-                        <div className='ml-3'>
-                          <div className='text-custom-grey whitespace-no-wrap'>
-                            <SvgInline
-                              url={currency.logo}
-                              color={currency.color}
-                              size={32}
-                            />
-                          </div>
-                        </div>
+                    <td className='py-4 px-6 border-b border-gray-200 text-custom-grey text-sm border-l'>
+                      <div className='text-custom-grey whitespace-no-wrap'>
+                        <SvgInline
+                          url={currency.logo}
+                          color={currency.color}
+                          size={32}
+                        />
                       </div>
                     </td>
                     {/* Name */}
@@ -80,25 +84,25 @@ const Home = () => {
                     </td>
                     {/* Price column */}
                     {/* Harga */}
-                    <td className='py-4 px-6 border-b border-gray-20 text-sm '>
+                    <td className='py-4 px-6 border-b border-gray-20 text-sm font-semibold'>
                       <p className='text-custom-black'>
                         {rupiahFormatter(Number(priceDetail.latestPrice))}
                       </p>
                     </td>
                     {/* 24 JAM */}
-                    <td className='py-4 px-6 border-b border-gray-20 text-sm '>
+                    <td className='py-4 px-6 border-b border-gray-20 text-sm font-semibold'>
                       {renderPercentage(priceDetail?.day)}
                     </td>
                     {/* 1 MGG */}
-                    <td className='py-4 px-6 border-b border-gray-20 text-sm '>
+                    <td className='py-4 px-6 border-b border-gray-20 text-sm font-semibold'>
                       {renderPercentage(priceDetail?.week)}
                     </td>
                     {/* 1 BLN */}
-                    <td className='py-4 px-6 border-b border-gray-20 text-sm '>
+                    <td className='py-4 px-6 border-b border-gray-20 text-sm font-semibold'>
                       {renderPercentage(priceDetail?.month)}
                     </td>
                     {/* 1 THN */}
-                    <td className='py-4 px-6 border-b border-gray-20 text-sm '>
+                    <td className='py-4 px-6 border-b border-gray-20 text-sm font-semibold border-r'>
                       {renderPercentage(priceDetail?.year)}
                     </td>
                   </tr>
