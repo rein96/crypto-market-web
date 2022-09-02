@@ -4,12 +4,17 @@ import { ArrowDown, ArrowUp } from 'components/common';
 
 const useRenderPercentage = () => {
   /** Return percentage element with color */
-  const renderPercentage = (price: string): React.ReactNode => {
-    if (!price) return <p></p>;
+  const renderPercentage = (percentage: string): React.ReactNode => {
+    if (!percentage)
+      return (
+        <p className='flex justify-end' style={{ justifyContent: 'end' }}>
+          0.00%
+        </p>
+      );
 
-    const isNegative = price[0] === '-';
+    const isNegative = percentage[0] === '-';
 
-    const isZero = price === '0.00';
+    const isZero = percentage === '0.00';
 
     const isPlus = !isNegative && !isZero;
 
@@ -31,7 +36,7 @@ const useRenderPercentage = () => {
             'text-profit': isPlus,
           })}
         >
-          {price}%
+          {percentage}%
         </p>
       </div>
     );
