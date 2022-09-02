@@ -4,7 +4,7 @@ import { ArrowDown, ArrowUp } from 'components/common';
 
 const useRenderPercentage = () => {
   /** Return percentage element with color */
-  const renderPercentage = (percentage: string): React.ReactNode => {
+  const renderPercentage = (percentage: string): JSX.Element => {
     if (!percentage)
       return (
         <p className='flex justify-end' style={{ justifyContent: 'end' }}>
