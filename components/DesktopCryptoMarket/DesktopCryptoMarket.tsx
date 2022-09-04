@@ -17,12 +17,9 @@ const DesktopCryptoMarket = () => {
 
   const lastIndexOfTableHeaderContent: number = tableHeaderContent.length - 1;
   return (
-    <div
-      id='desktop-home-content'
-      className='container m-auto p-4 dark:bg-white px-10'
-    >
+    <div id='desktop-home-content' className='container m-auto p-4 px-10'>
       <table className='w-full leading-normal table-auto'>
-        <thead className='text-gray-600 text-xs font-semibold border-gray tracking-wider text-left px-5 py-3 hover:cursor-pointer uppercase border-b-2 border-gray-200'>
+        <thead className='text-gray-600 text-xs font-semibold border-gray tracking-wider px-5 py-3 hover:cursor-pointer uppercase border-b-2 border-gray-200'>
           <tr className='border-b border-gray rounded-md'>
             {tableHeaderContent.map((text, index) => {
               return (
@@ -30,9 +27,9 @@ const DesktopCryptoMarket = () => {
                   key={text.id}
                   scope='col'
                   className={classNames(
-                    'text-gray-dark border-gray border-t-2 border-gray-200 py-3 px-3 text-left text-xs font-semibold text-custom-grey uppercase tracking-wider rounded-t-lg',
+                    'text-gray-dark border-gray border-t-2 border-gray-200 py-3 px-3 text-xs font-semibold text-custom-grey uppercase tracking-wider rounded-t-lg',
                     {
-                      'border-l first-td': index === 0,
+                      'border-l first-td text-left': index === 0,
                       'border-r': index === lastIndexOfTableHeaderContent,
                     }
                   )}
@@ -59,7 +56,7 @@ const DesktopCryptoMarket = () => {
               return (
                 <tr
                   key={currency.currencySymbol}
-                  className='hover:bg-gray-100 hover:cursor-pointer'
+                  className='hover:bg-gray-100 dark:hover:bg-gray-600 hover:cursor-pointer'
                 >
                   <td className='lg:py-4 lg:px-6 border-b border-gray-200 text-custom-grey text-sm border-l'>
                     <div className='text-custom-grey whitespace-no-wrap p-5'>

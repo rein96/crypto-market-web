@@ -19,15 +19,18 @@ a {
   box-sizing: border-box;
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
   body {
     color: white;
-    background: black;
+    background: #171717;
   }
-} */
+  .text-custom-black {
+    color: white !important;
+  }
+}
 
 svg {
   width: inherit;

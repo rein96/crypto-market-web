@@ -75,7 +75,7 @@ const MobileHomeContent: React.FC = () => {
               return (
                 <div
                   key={currency.currencySymbol}
-                  className='mobile-body-list p-4 flex items-center border-t'
+                  className='mobile-body-list p-4 flex items-center border-t dark:border-t-0'
                 >
                   <SvgInline
                     url={`${PROXY_URL}${currency.logo}`}
