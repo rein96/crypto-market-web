@@ -14,7 +14,7 @@ const rupiahFormatter = (number: number) => {
  * Development = with PROXY_URL
  */
 const getSvgUrl = (logoURL: string) => {
-  if (process.env.NODE_ENV === 'production') {
+  if (process.env.NODE_ENV === 'development') {
     return `${PROXY_URL}${logoURL}`;
   }
 
