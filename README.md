@@ -21,9 +21,10 @@ Live: https://crypto.reinhartandreas.com
 ![Atomic-design](https://bradfrost.com/wp-content/uploads/2013/06/atomic-design.png)
 Source: https://bradfrost.com/wp-content/uploads/2013/06/atomic-design.png
 
-## Improvement
+## Future Improvement
 - Add Storybook
 - Improve Unit and Integration Test
+- Automate pipeline with testing
 - Add more features (search, filter, etc)
 
 ## Getting Started
