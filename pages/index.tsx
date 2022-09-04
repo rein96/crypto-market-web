@@ -1,6 +1,6 @@
-import Home from 'components/home';
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { HomeTemplate } from 'components/templates';
 
 const HomePage: NextPage = () => {
   return (
@@ -10,7 +10,7 @@ const HomePage: NextPage = () => {
         <meta name='description' content='Crypto Market' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Home />
+      <HomeTemplate />
     </div>
   );
 };

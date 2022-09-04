@@ -1,7 +1,7 @@
 import React from 'react';
 import { DesktopCurrencyList, MobileCurrencyList } from 'components/organisms';
 
-const Home = () => {
+const HomeTemplate = () => {
   return (
     <div id='homepage'>
       <MobileCurrencyList />
@@ -10,4 +10,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomeTemplate;
