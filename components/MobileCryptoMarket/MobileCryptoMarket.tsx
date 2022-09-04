@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SvgInline } from 'components/SvgInline';
+import { SvgInline } from 'components/atom';
 import { useCurrencyList, usePriceChanges, useRenderPercentage } from 'hooks';
 import { PriceDataInterface } from 'types';
 import { rupiahFormatter } from 'utils';
