@@ -4,7 +4,7 @@ import { priceHeaderContent } from 'constants/constants';
 import { MobileCurrencyItem } from 'components/molecules';
 
 /** Render mobile content */
-const MobileHomeContent: React.FC = () => {
+const MobileCurrencyList: React.FC = () => {
   /** Ex: '24 JAM' or '1 BLN' */
   const [selectedPriceTime, setSelectedPriceTime] = useState(
     priceHeaderContent[0].content
@@ -60,4 +60,4 @@ const MobileHomeContent: React.FC = () => {
   );
 };
 
-export default MobileHomeContent;
+export default MobileCurrencyList;
