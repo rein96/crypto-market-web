@@ -1,9 +1,8 @@
 import { SvgInline } from 'components/atoms';
-import { PROXY_URL } from 'constants/constants';
 import { usePriceChanges, useRenderPercentage } from 'hooks';
 import React from 'react';
 import { CryptocurrencyInterface, PriceDataInterface } from 'types';
-import { rupiahFormatter } from 'utils';
+import { getSvgUrl, rupiahFormatter } from 'utils';
 
 interface DesktopCurrencyItemProps {
   currency: CryptocurrencyInterface;
@@ -35,7 +34,11 @@ const DesktopCurrencyItem: React.FC<DesktopCurrencyItemProps> = ({
       <td className='lg:py-4 lg:px-6 border-b border-gray-200 text-custom-grey text-sm border-l'>
         <div className='text-custom-grey whitespace-no-wrap p-5'>
           <div className='flex'>
-            <SvgInline url={currency.logo} color={currency.color} size={32} />
+            <SvgInline
+              url={getSvgUrl(currency.logo)}
+              color={currency.color}
+              size={32}
+            />
             <div
               className='flex flex-1 items-center'
               style={{ flexFlow: 'row wrap' }}

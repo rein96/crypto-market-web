@@ -1,6 +1,5 @@
 import React from 'react';
 import { tableHeaderContent } from 'constants/constants';
-// import { useCurrencyList } from 'hooks';
 import classNames from 'classnames';
 import { DesktopCurrencyItem } from 'components/molecules';
 import { CryptocurrencyInterface } from 'types';
@@ -8,10 +7,6 @@ import { CryptocurrencyInterface } from 'types';
 const DesktopCurrencyList: React.FC<{
   currencyList: CryptocurrencyInterface[];
 }> = ({ currencyList }) => {
-  // const { data: currencyListResponseData } = useCurrencyList();
-
-  // const currencyList = currencyListResponseData?.payload;
-
   const lastIndexOfTableHeaderContent: number = tableHeaderContent.length - 1;
   return (
     <div id='desktop-market-content'>
