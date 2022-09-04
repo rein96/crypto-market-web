@@ -9,6 +9,6 @@ module.exports = {
   },
   setupFilesAfterEnv: ['./jest.setup.ts'],
   moduleNameMapper: {
-    common: '<rootDir>/components/common',
+    atom: '<rootDir>/components/atom',
   },
 };
