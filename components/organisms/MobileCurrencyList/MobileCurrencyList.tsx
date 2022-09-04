@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
-import { useCurrencyList } from 'hooks';
 import { priceHeaderContent } from 'constants/constants';
 import { MobileCurrencyItem } from 'components/molecules';
+import { CryptocurrencyInterface } from 'types';
 
 /** Render mobile content */
-const MobileCurrencyList: React.FC = () => {
+const MobileCurrencyList: React.FC<{
+  currencyList: CryptocurrencyInterface[];
+}> = ({ currencyList }) => {
   /** Ex: '24 JAM' or '1 BLN' */
   const [selectedPriceTime, setSelectedPriceTime] = useState(
     priceHeaderContent[0].content
   );
-
-  const { data: currencyListResponseData } = useCurrencyList();
-
-  const currencyList = currencyListResponseData?.payload;
 
   const handleChangeSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedPriceTime(event.target.value);

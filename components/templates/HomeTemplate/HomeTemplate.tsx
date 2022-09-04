@@ -14,7 +14,7 @@ const HomeTemplate: React.FC<{
     <div id='homepage' className='m-auto p-0 px-0 lg:p-4 lg:px-10'>
       <HomeHeader />
       <CurrencyCategoryList />
-      <MobileCurrencyList />
+      <MobileCurrencyList currencyList={currencyList} />
       <DesktopCurrencyList currencyList={currencyList} />
     </div>
   );
