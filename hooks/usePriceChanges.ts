@@ -1,7 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import { UPDATE_PRICE_INTERVAL } from 'constants/constants';
 import endpoints from 'networks/endpoints';
-import { PriceChangesResponseInterface } from 'types';
+import {
+  PriceChangesResponseInterface,
+  PriceDataInterface,
+  SortedPricePairInterface,
+} from 'types';
 
 const fetchPriceChanges = async () => {
   const URL = endpoints.tradePriceChanges;
@@ -10,13 +14,13 @@ const fetchPriceChanges = async () => {
     throw new Error('Fetching Error');
   }
   const responseJson = await response.json();
-  const pricePairList = responseJson?.payload;
+  const pricePairList: PriceDataInterface[] = responseJson?.payload;
 
   /**
    * Grouping into symbol object
    * pattern: { "BTC": { pair, latestPrice, ... } }
    *  */
-  const groupingObject = {};
+  const groupingObject: SortedPricePairInterface = {};
   pricePairList?.forEach(function (priceData) {
     /** Ex: from 'btc/idr' to 'btc' */
     const symbol = priceData.pair.split('/')?.[0];
