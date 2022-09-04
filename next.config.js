@@ -5,6 +5,7 @@ const nextConfig = {
   images: {
     domains: ['s3-ap-southeast-1.amazonaws.com', 'thingproxy.freeboard.io'],
   },
+  crossOrigin: 'anonymous',
 };
 
 module.exports = nextConfig;

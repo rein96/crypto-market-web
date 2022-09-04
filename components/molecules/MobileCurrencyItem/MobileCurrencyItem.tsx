@@ -1,9 +1,9 @@
 import { SvgInline } from 'components/atoms';
-import { priceHeaderContent, PROXY_URL } from 'constants/constants';
+import { priceHeaderContent } from 'constants/constants';
 import { usePriceChanges, useRenderPercentage } from 'hooks';
 import React from 'react';
 import { CryptocurrencyInterface, PriceDataInterface } from 'types';
-import { rupiahFormatter } from 'utils';
+import { getSvgUrl, rupiahFormatter } from 'utils';
 
 interface MobileCurrencyItemPropsInterface {
   currency: CryptocurrencyInterface;
@@ -43,7 +43,7 @@ const MobileCurrencyItem: React.FC<MobileCurrencyItemPropsInterface> = ({
       className='mobile-body-list p-4 flex items-center border-t dark:border-t-0'
     >
       <SvgInline
-        url={`${PROXY_URL}${currency.logo}`}
+        url={getSvgUrl(currency.logo)}
         color={currency.color}
         size={32}
       />
