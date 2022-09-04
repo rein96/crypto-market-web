@@ -1,7 +1,7 @@
 import React from 'react';
 import { PROXY_URL, tableHeaderContent } from 'constants/constants';
 import { useCurrencyList, usePriceChanges, useRenderPercentage } from 'hooks';
-import { SvgInline } from 'components/atom';
+import { SvgInline } from 'components/atoms';
 import { PriceDataInterface } from 'types';
 import { rupiahFormatter } from 'utils';
 import classNames from 'classnames';

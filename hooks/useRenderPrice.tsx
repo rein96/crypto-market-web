@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { ArrowDown, ArrowUp } from 'components/atom';
+import { ArrowDown, ArrowUp } from 'components/atoms';
 
 const useRenderPercentage = () => {
   /** Return percentage element with color */

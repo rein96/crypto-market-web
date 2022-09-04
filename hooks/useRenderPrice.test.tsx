@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useRenderPercentage } from './useRenderPrice';
-import { ArrowDown, ArrowUp } from 'components/atom';
+import { ArrowDown, ArrowUp } from 'components/atoms';
 
 test('render percentage element', async () => {
   const queryClient = new QueryClient();
