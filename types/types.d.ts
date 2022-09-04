@@ -58,3 +58,7 @@ export interface TableHeaderInterface {
 export interface ArrowInterface {
   color?: string;
 }
+
+export interface CategoryListInterface {
+  name: string;
+}

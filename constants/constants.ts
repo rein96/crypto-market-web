@@ -1,4 +1,4 @@
-import { TableHeaderInterface } from 'types';
+import { CategoryListInterface, TableHeaderInterface } from 'types';
 
 const priceHeaderContent: TableHeaderInterface[] = [
   {
@@ -38,10 +38,44 @@ const UPDATE_CURRENCY_INTERVAL = 20_000; // 20 second
 /** To eliminate CORS issue */
 const PROXY_URL = 'https://thingproxy.freeboard.io/fetch/';
 
+const categoryList: CategoryListInterface[] = [
+  {
+    name: 'New',
+  },
+  {
+    name: 'DeFi',
+  },
+  {
+    name: 'NFT/Gaming',
+  },
+  {
+    name: 'CEX',
+  },
+  {
+    name: 'DEX',
+  },
+  {
+    name: 'Layer-1',
+  },
+  {
+    name: 'Infrastructure',
+  },
+  {
+    name: 'Lending',
+  },
+  {
+    name: 'Layer-2',
+  },
+  {
+    name: 'Ekosistem Stablecoin',
+  },
+];
+
 export {
   tableHeaderContent,
   priceHeaderContent,
   UPDATE_CURRENCY_INTERVAL,
   UPDATE_PRICE_INTERVAL,
   PROXY_URL,
+  categoryList,
 };
