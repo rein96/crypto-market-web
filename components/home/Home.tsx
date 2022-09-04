@@ -1,11 +1,11 @@
 import React from 'react';
 import DesktopCryptoMarket from 'components/DesktopCryptoMarket';
-import MobileCryptoMarket from 'components/MobileCryptoMarket';
+import { MobileCurrencyList } from 'components/organisms';
 
 const Home = () => {
   return (
     <div id='homepage'>
-      <MobileCryptoMarket />
+      <MobileCurrencyList />
       <DesktopCryptoMarket />
     </div>
   );
