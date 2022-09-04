@@ -37,25 +37,30 @@ svg {
   height: inherit;
 }
 
-#desktop-home-content {
+#desktop-market-content {
   display: none;
+}
 
+#homepage {
   max-width: 1280px;
   margin: auto;
   padding-top: 2rem;
 }
 
-#mobile-home-content {
+#mobile-market-content {
   display: block;
 }
 
 @media (min-width: 768px) {
-  #desktop-home-content {
+  #desktop-market-content {
     display: block;
+  }
+
+  #homepage {
     padding: 1rem 1rem 2.5rem;
   }
 
-  #mobile-home-content {
+  #mobile-market-content {
     display: none;
   }
 }

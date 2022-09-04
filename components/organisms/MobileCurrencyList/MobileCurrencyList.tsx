@@ -19,7 +19,7 @@ const MobileCurrencyList: React.FC = () => {
   };
 
   return (
-    <div id='mobile-home-content'>
+    <div id='mobile-market-content'>
       {/* Crypto 'Table' */}
       <div className='mobile-home-container'>
         {/* Header */}

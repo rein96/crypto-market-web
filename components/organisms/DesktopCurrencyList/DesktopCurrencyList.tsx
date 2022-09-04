@@ -11,7 +11,7 @@ const DesktopCurrencyList = () => {
 
   const lastIndexOfTableHeaderContent: number = tableHeaderContent.length - 1;
   return (
-    <div id='desktop-home-content' className='container m-auto p-4 px-10'>
+    <div id='desktop-market-content'>
       <table className='w-full leading-normal table-auto'>
         <thead className='text-gray-600 text-xs font-semibold border-gray tracking-wider px-5 py-3 hover:cursor-pointer uppercase border-b-2 border-gray-200'>
           <tr className='border-b border-gray rounded-md'>
