@@ -23,10 +23,6 @@ const HomePage: NextPage<{ currencyList: CryptocurrencyInterface[] }> = ({
  * Fetching Data in Server Side
  */
 export const getStaticProps = async () => {
-  // const config = getConfig();
-  /**
-   * Fetching risk scoring data for simulation chart
-   */
   const endpoint = endpoints.walletSupportedCurrencies;
 
   try {
