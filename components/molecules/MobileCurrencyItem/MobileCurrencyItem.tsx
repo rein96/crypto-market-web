@@ -5,12 +5,12 @@ import React from 'react';
 import { CryptocurrencyInterface, PriceDataInterface } from 'types';
 import { rupiahFormatter } from 'utils';
 
-interface MobileCurrencyListPropsInterface {
+interface MobileCurrencyItemPropsInterface {
   currency: CryptocurrencyInterface;
   selectedPriceTime: string;
 }
 
-const MobileCurrencyList: React.FC<MobileCurrencyListPropsInterface> = ({
+const MobileCurrencyItem: React.FC<MobileCurrencyItemPropsInterface> = ({
   currency,
   selectedPriceTime,
 }) => {
@@ -68,4 +68,4 @@ const MobileCurrencyList: React.FC<MobileCurrencyListPropsInterface> = ({
   );
 };
 
-export default MobileCurrencyList;
+export default MobileCurrencyItem;

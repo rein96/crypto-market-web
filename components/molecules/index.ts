@@ -1,1 +1,1 @@
-export * from './MobileCurrencyList';
+export * from './MobileCurrencyItem';

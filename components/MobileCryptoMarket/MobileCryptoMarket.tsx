@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useCurrencyList } from 'hooks';
 import { priceHeaderContent } from 'constants/constants';
-import { MobileCurrencyList } from 'components/molecules';
+import { MobileCurrencyItem } from 'components/molecules';
 
 /** Render mobile content */
 const MobileHomeContent: React.FC = () => {
@@ -48,7 +48,7 @@ const MobileHomeContent: React.FC = () => {
           {/* Crypto list */}
           {currencyList &&
             currencyList?.map((currency) => (
-              <MobileCurrencyList
+              <MobileCurrencyItem
                 key={currency.currencySymbol}
                 currency={currency}
                 selectedPriceTime={selectedPriceTime}
