@@ -11,6 +11,8 @@ module.exports = {
         loss: '#ff5a5a',
         'custom-black': '#171717',
         'custom-grey': '#979797',
+        'custom-blue1': '#0a4ee2',
+        'custom-blue2': '#dbeafe',
       },
     },
   },
