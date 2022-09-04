@@ -4,7 +4,7 @@ import { useCurrencyList } from 'hooks';
 import classNames from 'classnames';
 import { DesktopCurrencyItem } from 'components/molecules';
 
-const DesktopCryptoMarket = () => {
+const DesktopCurrencyList = () => {
   const { data: currencyListResponseData } = useCurrencyList();
 
   const currencyList = currencyListResponseData?.payload;
@@ -48,4 +48,4 @@ const DesktopCryptoMarket = () => {
   );
 };
 
-export default DesktopCryptoMarket;
+export default DesktopCurrencyList;
