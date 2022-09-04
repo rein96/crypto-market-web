@@ -42,11 +42,7 @@ const MobileCurrencyItem: React.FC<MobileCurrencyItemPropsInterface> = ({
       key={currency.currencySymbol}
       className='mobile-body-list p-4 flex items-center border-t dark:border-t-0'
     >
-      <SvgInline
-        url={`${PROXY_URL}${currency.logo}`}
-        color={currency.color}
-        size={32}
-      />
+      <SvgInline url={`${currency.logo}`} color={currency.color} size={32} />
 
       {/* Content container */}
       <div className='mobile-body-list-content pl-6 flex-1 flex flex-row'>

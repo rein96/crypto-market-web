@@ -35,11 +35,7 @@ const DesktopCurrencyItem: React.FC<DesktopCurrencyItemProps> = ({
       <td className='lg:py-4 lg:px-6 border-b border-gray-200 text-custom-grey text-sm border-l'>
         <div className='text-custom-grey whitespace-no-wrap p-5'>
           <div className='flex'>
-            <SvgInline
-              url={`${PROXY_URL}${currency.logo}`}
-              color={currency.color}
-              size={32}
-            />
+            <SvgInline url={currency.logo} color={currency.color} size={32} />
             <div
               className='flex flex-1 items-center'
               style={{ flexFlow: 'row wrap' }}
