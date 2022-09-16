@@ -11,9 +11,8 @@ interface DesktopCurrencyItemProps {
 const DesktopCurrencyItem: React.FC<DesktopCurrencyItemProps> = ({
   currency,
 }) => {
-  const { data: priceChangesResponseData } = usePriceChanges();
+  const { data: sortedPricePairData } = usePriceChanges();
   const { renderPercentage } = useRenderPercentage();
-  const sortedPricePairData = priceChangesResponseData?.sortedPricePairData;
 
   /** Remove IDR Token (first index) or sortedPricePairData is not available yet*/
   const preventRendering =

@@ -38,18 +38,11 @@ interface WalletInterface {
  * T is required generic
  * U is optional generic
  * */
-export interface ResponseInterface<T, U = void> {
+export interface ResponseInterface<T> {
   code: string;
   message: string;
   payload: T;
-  [key: string]: U;
 }
-
-export interface PriceChangesResponseInterface
-  extends ResponseInterface<PriceDataInterface[]> {
-  sortedPricePairData: SortedPricePairInterface;
-}
-
 export interface TableHeaderInterface {
   id: string;
   content: string;
